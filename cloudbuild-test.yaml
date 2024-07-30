@@ -1,10 +1,17 @@
 steps:
-- name: 'python:3.8'
-  entrypoint: 'bash'
-  args: ['-c', 'pip install -r requirements.txt && python -m pytest test_parallel1.py -s']
-  waitFor: ['-']
-
-- name: 'python:3.8'
-  entrypoint: 'bash'
-  args: ['-c', 'pip install -r requirements.txt && python -m pytest test_parallel2.py -s']
-  waitFor: ['-']
+  - name: python:3.11
+    entrypoint: pip
+    id: pipinstall
+    args: ['install', '-r', 'requirements.txt', '--user']
+    
+  - name: python:3.11
+    entrypoint: python
+    id: test1
+    args: ['-m', 'pytest', 'test_parallel1.py', '-s']
+    waitFor: [pipinstall]
+  
+  - name: python:3.11
+    entrypoint: python
+    id: test2
+    args: ['-m', 'pytest', 'test_parallel1.py', '-s']
+    waitFor: [pipinstall]

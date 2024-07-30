@@ -2,10 +2,10 @@ steps:
   - name: python:3.8
     entrypoint: bash
     id: Build
-    args: ['pip', 'install', 'pytest']
+    args: ['-c', 'pip', 'install', 'pytest']
     timeout: '1200s'
 
   - name: python:3.8    
     entrypoint: bash
-    args: ['pytest']      
+    args: ['-c', 'pytest']      
     timeout: '1800s'

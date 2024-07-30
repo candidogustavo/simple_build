@@ -1,10 +1,5 @@
 steps:
-  - name: python:3.8
-    entrypoint: pip
-    id: Build
-    args: ['install', '-r', 'requirements.txt']
-    timeout: '1200s'
+- name: 'python:3.8'
+  entrypoint: 'bash'
+  args: ['-c', 'pip install -r requirements.txt && python -m pytest']
 
-  - name: python:3.8    
-    entrypoint: pytest
-    timeout: '1800s'

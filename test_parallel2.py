@@ -9,5 +9,7 @@ def test_sub():
     assert sub(1,1) == 0
 
 def test_fail_sub():
-    print("test_fail_sub", datetime.now())
+    print("test_fail_sub begin", datetime.now())
+    import time; time.sleep(10)
+    print("test_fail_sub final", datetime.now())
     assert sub(1,2) != 0

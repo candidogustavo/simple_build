@@ -7,11 +7,7 @@ steps:
   - name: python:3.11
     entrypoint: python
     args: ['-m', 'pytest', 'test_parallel1.py', '-s']
-    waitFor: 
-    - pipinstall
    
   - name: python:3.11
     entrypoint: python
     args: ['-m', 'pytest', 'test_parallel1.py', '-s']
-    waitFor: 
-    - pipinstall

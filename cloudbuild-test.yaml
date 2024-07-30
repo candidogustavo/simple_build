@@ -4,14 +4,14 @@ steps:
     id: pipinstall
     args: ['-m', 'pip', 'install', 'pytest']
     
-  - name: python:3.11
+  - name: 'python'
     entrypoint: python
     id: test1
     args: ['-m', 'pytest', 'test_parallel1.py', '-s']
     waitFor: 
     - pipinstall
   
-  - name: python:3.11
+  - name: 'python'
     entrypoint: python
     id: test2
     args: ['-m', 'pytest', 'test_parallel1.py', '-s']

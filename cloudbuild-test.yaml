@@ -1,5 +1,5 @@
 steps:
-  - name: python:3.11
+  - name: 'python'
     entrypoint: python
     id: pipinstall
     args: ['-m', 'pip', 'install', 'pytest']

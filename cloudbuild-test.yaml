@@ -5,6 +5,6 @@ steps:
     args: ['install', 'pytest']
     timeout: '1200s'
 
-  - name: python:3.8    
+  - name: python:3.11    
     entrypoint: pytest
     timeout: '1800s'

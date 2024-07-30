@@ -2,9 +2,9 @@ steps:
   - name: python:3.8
     entrypoint: pip
     id: Build
-    args: ['install', 'pytest']
+    args: ['install', '-r', 'requirements.txt']
     timeout: '1200s'
 
-  - name: python:3.11    
+  - name: python:3.8    
     entrypoint: pytest
     timeout: '1800s'

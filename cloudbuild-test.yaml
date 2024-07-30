@@ -13,5 +13,5 @@ steps:
   - name: python:3.11
     entrypoint: python
     id: test2
-    args: ['-m', 'pytest', 'test_parallel1.py', '-s']
+    args: ['-m', 'pytest', 'test_parallel2.py', '-s']
     waitFor: [pipinstall]
